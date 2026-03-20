@@ -1,17 +1,17 @@
 import { Context } from "grammy";
 import { Command } from "./command.class";
-import { PcService } from "../../services/pc";
+import { PcControlFacade } from "../../services/facades/pc.control";
 
 export class PlayCommand extends Command {
     commandName = 'play';
 
-    constructor(private _pcService: PcService) {
+    constructor(private _pcControl: PcControlFacade) {
         super();
     }
 
     execute(ctx: Context): void {
         ctx.reply('Запускаю процесс на твоем ПК!');
 
-        this._pcService.launchGame();
+        this._pcControl.activateMathMode();
     }
 }

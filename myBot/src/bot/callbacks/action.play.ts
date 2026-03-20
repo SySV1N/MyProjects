@@ -1,11 +1,11 @@
 import { Context } from "grammy";
 import { Callback } from "./callback.class";
-import { PcService } from "../../services/pc";
+import { PcControlFacade } from "../../services/facades/pc.control";
 
 export class PlayCallback extends Callback {
     callbackName = 'action_play';
 
-    constructor(private _pcService: PcService) {
+    constructor(private _pcControl: PcControlFacade) {
         super();
     }
 
@@ -13,6 +13,6 @@ export class PlayCallback extends Callback {
         await ctx.answerCallbackQuery({ text: 'Запускаю...' });
         await ctx.reply('Процесс запустился');
 
-        this._pcService.launchGame();
+        this._pcControl.activateMathMode();
     }
 }
