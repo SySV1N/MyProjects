@@ -1,0 +1,18 @@
+{
+  "name": "lesson1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node dist/index.js"
+  },
+  "keywords": [],
+  "author": "SySV1N",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@types/node": "^25.2.3",
+    "dotenv": "^17.3.1",
+    "grammy": "^1.41.1"
+  }
+}
